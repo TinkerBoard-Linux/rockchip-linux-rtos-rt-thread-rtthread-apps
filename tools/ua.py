@@ -172,7 +172,7 @@ def BuildApplication(TARGET, SConscriptFile, BSP_ROOT = None, RTT_ROOT = None):
         Env = Environment(tools = ['mingw'],
             AS = rtconfig.AS, ASFLAGS = rtconfig.AFLAGS,
             CC = rtconfig.CC, CCFLAGS = rtconfig.M_CFLAGS,
-            CPPDEFINES = GetCPPDEFINES(),
+            CPPDEFINES = GetCPPDEFINES() + ['HAVE_CCONFIG_H'],
             CXX = rtconfig.CXX, AR = rtconfig.AR, ARFLAGS = '-rc',
             LINK = rtconfig.LINK, LINKFLAGS = linkflags,
             CPPPATH = CPPPATH)
@@ -254,7 +254,7 @@ def BuildLibrary(TARGET, SConscriptFile, BSP_ROOT = None, RTT_ROOT = None):
         Env = Environment(tools = ['mingw'],
             AS = rtconfig.AS, ASFLAGS = rtconfig.AFLAGS,
             CC = rtconfig.CC, CCFLAGS = rtconfig.M_CFLAGS,
-            CPPDEFINES = GetCPPDEFINES(),
+            CPPDEFINES = GetCPPDEFINES() + ['HAVE_CCONFIG_H'],
             CXX = rtconfig.CXX, AR = rtconfig.AR, ARFLAGS = '-rc',
             LINK = rtconfig.LINK, LINKFLAGS = linkflags,
             CPPPATH = CPPPATH)
