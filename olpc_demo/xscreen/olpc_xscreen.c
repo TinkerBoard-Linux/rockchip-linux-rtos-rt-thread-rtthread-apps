@@ -152,7 +152,7 @@ static rt_err_t olpc_xscreen_init(struct olpc_xscreen_data *olpc_data)
     ret = rt_device_control(device, RTGRAPHIC_CTRL_GET_INFO, &info);
     RT_ASSERT(ret == RT_EOK);
 
-    olpc_data->fblen = XSCREEN_FB_W * XSCREEN_FB_H + 360;
+    olpc_data->fblen = XSCREEN_FB_W * XSCREEN_FB_H;
     olpc_data->fb    = (rt_uint8_t *)rt_malloc_large(olpc_data->fblen);
     RT_ASSERT(olpc_data->fb != RT_NULL);
 
